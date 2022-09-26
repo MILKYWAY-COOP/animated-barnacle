@@ -13,7 +13,7 @@ export const StyledNavbar = styled.nav`
 
   .logo {
     font-size: 1.5em;
-    color: ${({ theme }) => theme.fontColor};
+    color: ${({ theme }) => theme.universal1};
     font-family: 'Press Start 2P', cursive;
   }
 
