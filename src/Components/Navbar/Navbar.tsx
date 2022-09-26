@@ -1,30 +1,30 @@
-const Navbar = (props: any) => {
-  const { theme } = props;
+import { ColorContext } from '../../Context/ColorContext/colorContext';
+import { StyledNavbar } from './Navbar.styled';
+import { StyledMobile } from './Mobile.styled';
+import { useContext } from 'react';
+import Search from '../Search/Search';
+
+const Navbar = () => {
+  const theme = useContext(ColorContext);
+  console.log(theme);
 
   return (
-    <div>
-      <div>
-        <h1>TnC</h1>
-      </div>
-      <div>
-        <select>
-          <option value='1'>Any Where</option>
-          <option value='2'>Mwangaza</option>
-          <option value='3'>Area 4</option>
-          <option value='4'>VM</option>
-          <option value='5'>Catholic</option>
-        </select>
-        <select>
-          <option value='1'>Any Price</option>
-          <option value='2'> Below 3000</option>
-          <option value='3'>3000 - 4000</option>
-          <option value='4'>4000 - 5000</option>
-          <option value='4'>5000 - 6000</option>
-          <option value='4'>6000 - 7000</option>
-          <option value='4'>Above 7000</option>
-        </select>
-      </div>
-    </div>
+    <>
+      <StyledNavbar theme={theme}>
+        <div className='logo'>
+          <h1>TnC</h1>
+        </div>
+        <div className='search'>
+          <Search />
+        </div>
+        <div className='Landlord'>
+          <h1>Become a Landlord</h1>
+        </div>
+      </StyledNavbar>
+      <StyledMobile theme={theme} >
+        <Search />
+      </StyledMobile>
+    </>
   );
 };
 
