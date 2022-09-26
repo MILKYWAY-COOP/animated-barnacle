@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "housetnc",
+    "public": "build",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
