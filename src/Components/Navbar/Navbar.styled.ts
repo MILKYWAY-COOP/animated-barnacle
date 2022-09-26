@@ -29,6 +29,10 @@ export const StyledNavbar = styled.nav`
     &:hover {
       background-color: ${({ theme }) => theme.secondaryColor};
     }
+
+    @media (max-width: 768px) {
+      background-color: ${({ theme }) => theme.secondaryColor};
+    }
   }
 
   @media (max-width: 768px) {
