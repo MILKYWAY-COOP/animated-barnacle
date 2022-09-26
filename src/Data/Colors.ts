@@ -4,8 +4,8 @@ const darkTheme = {
   fontColor: '#FFFFFF',
   secondaryFontColor: '#FFFDD0',
   universal1: '#FFFDD0',
-  fontFamily: `'Reem Kufi Ink', sans-serif`
-};
+  fontFamily: `'Reem Kufi Ink', sans-serif`,
+}
 
 const lightTheme = {
   mainColor: '#ADD8E6',
@@ -14,23 +14,23 @@ const lightTheme = {
   secondaryFontColor: '#282829',
   fontFamily: `'Reem Kufi Ink', sans-serif`,
   universal1: '#FFFDD0',
-};
+}
 
 export const Colors = {
   darkTheme,
-  lightTheme
-};
+  lightTheme,
+}
 
 // create interface for colors
 export interface IColors {
-  mainColor: string;
-  secondaryColor: string;
-  fontColor: string;
-  secondaryFontColor: string;
+  mainColor: string
+  secondaryColor: string
+  fontColor: string
+  secondaryFontColor: string
 }
 
 // create interface for theme
 export interface ITheme {
-  darkTheme: IColors;
-  lightTheme: IColors;
+  darkTheme: IColors
+  lightTheme: IColors
 }
