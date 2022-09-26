@@ -1,4 +1,4 @@
-import { ColorContext } from '../../Context/ColorContext/colorContext'
+import { ColorContext } from '../../Context'
 import { StyledNavbar } from './Navbar.styled'
 import { StyledMobile } from './Mobile.styled'
 import { useContext } from 'react'
