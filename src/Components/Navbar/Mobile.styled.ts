@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledMobile = styled.div`
   display: flex;
@@ -6,9 +6,9 @@ export const StyledMobile = styled.div`
   justify-content: center;
   align-items: center;
   background: ${({ theme }) => theme.mainColor};
-  padding: .5em;
+  padding: 0.5em;
 
   @media (min-width: 768px) {
     display: none;
   }
-`;
+`
