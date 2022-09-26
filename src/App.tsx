@@ -1,14 +1,11 @@
-import { useContext } from 'react';
-
-import { ColorContext } from './context/ColorContext/colorContext';
-import { Navbar } from './Components';
+import { Navbar, StyledApp } from './Components';
 
 function App() {
-  const theme = useContext(ColorContext);
+
   return (
-    <div className='App'>
-      <Navbar theme={theme} />
-    </div>
+    <StyledApp>
+      <Navbar />
+    </StyledApp>
   );
 }
 
