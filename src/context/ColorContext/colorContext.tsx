@@ -15,3 +15,5 @@ export const ColorProvider = ({ children }: Props) => {
 
   return <ColorContext.Provider value={theme}>{children}</ColorContext.Provider>
 }
+
+export default ColorProvider
