@@ -1,8 +1,8 @@
 import { useState, createContext } from 'react';
 
-import { Colors, IColors, ITheme } from '../../Data/Colors';
+import { Colors, IColors } from '../../Data/Colors';
 
-export const ColorContext = createContext<IColors | null>(null);
+export const ColorContext = createContext<IColors | null>(Colors.darkTheme);
 
 // create an interface for the children
 interface Props {
