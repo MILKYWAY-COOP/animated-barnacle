@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledNavbar = styled.nav`
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -37,4 +37,4 @@ export const StyledNavbar = styled.nav`
       display: none;
     }
   }
-`;
+`
