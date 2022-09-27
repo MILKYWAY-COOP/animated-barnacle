@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const StyledNavbar = styled.nav`
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,6 +11,7 @@ export const StyledNavbar = styled.nav`
   padding: 0 1em;
   background: ${({ theme }) => theme.mainColor};
   transition: all 0.5s ease-in-out;
+  
 
   .logo {
     font-size: 1.5em;
