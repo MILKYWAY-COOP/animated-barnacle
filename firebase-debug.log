@@ -1,0 +1,28 @@
+[debug] [2022-09-27T16:47:29.629Z] ----------------------------------------------------------------------
+[debug] [2022-09-27T16:47:29.631Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Muchendu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-27T16:47:29.632Z] CLI Version:   11.10.0
+[debug] [2022-09-27T16:47:29.632Z] Platform:      win32
+[debug] [2022-09-27T16:47:29.633Z] Node Version:  v16.15.0
+[debug] [2022-09-27T16:47:29.634Z] Time:          Tue Sep 27 2022 19:47:29 GMT+0300 (East Africa Time)
+[debug] [2022-09-27T16:47:29.634Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-27T16:47:29.741Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-27T16:47:29.742Z] > authorizing via signed-in user (muchendumaina66@gmail.com)
+[debug] [2022-09-27T16:47:29.742Z] [iam] checking project housetnc-d7f99 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-27T16:47:29.746Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/housetnc-d7f99:testIamPermissions [none]
+[debug] [2022-09-27T16:47:29.746Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/housetnc-d7f99:testIamPermissions x-goog-quota-user=projects/housetnc-d7f99
+[debug] [2022-09-27T16:47:29.746Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/housetnc-d7f99:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-27T16:47:30.861Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/housetnc-d7f99:testIamPermissions 200
+[debug] [2022-09-27T16:47:30.861Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/housetnc-d7f99:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-27T16:47:30.864Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/housetnc-d7f99 [none]
+[debug] [2022-09-27T16:47:32.750Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/housetnc-d7f99 200
+[debug] [2022-09-27T16:47:32.752Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/housetnc-d7f99 {"projectId":"housetnc-d7f99","projectNumber":"995140781013","displayName":"HouseTnC","name":"projects/housetnc-d7f99","resources":{"hostingSite":"housetnc-d7f99"},"state":"ACTIVE","etag":"1_bfaa1076-35d4-46c6-a91a-b3becb5e53fb"}
+[info] 
+[info] === Deploying to 'housetnc-d7f99'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-09-27T16:47:32.770Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/housetnc-d7f99 [none]
+[debug] [2022-09-27T16:47:33.508Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/housetnc-d7f99 200
+[debug] [2022-09-27T16:47:33.509Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/housetnc-d7f99 {"projectId":"housetnc-d7f99","projectNumber":"995140781013","displayName":"HouseTnC","name":"projects/housetnc-d7f99","resources":{"hostingSite":"housetnc-d7f99"},"state":"ACTIVE","etag":"1_bfaa1076-35d4-46c6-a91a-b3becb5e53fb"}
+[debug] [2022-09-27T16:47:33.521Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/995140781013/sites/housetnc/versions [none]
+[debug] [2022-09-27T16:47:33.521Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/995140781013/sites/housetnc/versions {"config":{},"labels":{"deployment-tool":"cli-firebase"}}
