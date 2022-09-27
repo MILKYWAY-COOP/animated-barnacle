@@ -25,7 +25,7 @@ export interface ITheme {
 export interface IUserContext {
   user: {}
   isLoggedIn: boolean
-  createUser: (user: {}) => void
+  createUser: (email: string, password: string) => void
   logOut: () => void
   signInWithGoogle: () => void
 }
