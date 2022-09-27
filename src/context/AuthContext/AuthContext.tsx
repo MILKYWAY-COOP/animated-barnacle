@@ -29,7 +29,7 @@ export const AuthContextProvider = ({ children }: Props) => {
     }
   }
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = async (): Promise<void> => {
     const provider = new GoogleAuthProvider()
     try {
       await signInWithPopup(auth, provider)
@@ -46,7 +46,7 @@ export const AuthContextProvider = ({ children }: Props) => {
     }
   }
 
-  const logOut = async () => {
+  const logOut = async (): Promise<void> => {
     try {
       await signOut(auth)
     } catch (error) {
@@ -69,7 +69,9 @@ export const AuthContextProvider = ({ children }: Props) => {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, logOut, signInWithGoogle }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, logOut, signInWithGoogle, user, createUser }}
+    >
       {children}
     </AuthContext.Provider>
   )
