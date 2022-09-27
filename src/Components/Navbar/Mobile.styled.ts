@@ -7,6 +7,7 @@ export const StyledMobile = styled.div`
   align-items: center;
   background: ${({ theme }) => theme.mainColor};
   padding: 0.5em;
+  
 
   @media (min-width: 768px) {
     display: none;
