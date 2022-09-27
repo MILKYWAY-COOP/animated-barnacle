@@ -1,13 +1,17 @@
-import { StyledMain, StyledRegister } from './Signin.styled'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { useCurrentPath } from '../../Elements'
-import { useNavigate } from 'react-router-dom'
 import { useContext, useState } from 'react'
-import { ColorContext } from '../../Context'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
+import { useCurrentPath } from '../../Elements'
+import { ColorContext, useData } from '../../Context'
+
+import * as Styled from './Signin.styled'
+
 const Register = () => {
+  const { user, createUser, signInWithGoogle } = useData()
+
   const schema = yup.object().shape({
     Name: yup.string().required(),
     Email: yup.string().email().required(),
@@ -31,7 +35,7 @@ const Register = () => {
   }
 
   return (
-    <StyledRegister>
+    <Styled.StyledRegister>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="text" placeholder="Your Name" {...register('Name')} />
         <input type="email" placeholder="Your Email" {...register('Email')} />
@@ -45,9 +49,9 @@ const Register = () => {
           placeholder="Confirm Your Password"
           {...register('ConfirmPassword')}
         />
-        <button type="submit">Register</button>
+        <button type="submit" >Register</button>
       </form>
-    </StyledRegister>
+    </Styled.StyledRegister>
   )
 }
 
@@ -70,7 +74,7 @@ const Login = () => {
   }
 
   return (
-    <StyledRegister>
+    <Styled.StyledRegister>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="email" placeholder="Your Email" {...register('Email')} />
         <input
@@ -80,7 +84,7 @@ const Login = () => {
         />
         <button type="submit">Log In</button>
       </form>
-    </StyledRegister>
+    </Styled.StyledRegister>
   )
 }
 
@@ -102,7 +106,7 @@ const SignIn = () => {
   }
 
   return (
-    <StyledMain theme={theme}>
+    <Styled.StyledMain theme={theme}>
       <div className="container">
         <div className="title">
           <h1>{`House TnC ${essentials.path}`}</h1>
@@ -133,7 +137,7 @@ const SignIn = () => {
           </span>
         ) : null}
       </div>
-    </StyledMain>
+    </Styled.StyledMain>
   )
 }
 
