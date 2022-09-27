@@ -1,2 +1,2 @@
-export { ColorContext } from './ColorContext/colorContext';
-export * from './AuthContext/AuthContext';
+export { ColorContext } from './ColorContext/colorContext'
+export * from './AuthContext/AuthContext'
