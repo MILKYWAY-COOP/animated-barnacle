@@ -5,6 +5,10 @@ const StyledApp = styled.div`
   height: calc(100vh - 80px);
   background: ${({ theme }) => theme.secondaryColor};
   padding: 1em;
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 128px);
+  }
 `
 
 export default StyledApp
