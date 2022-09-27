@@ -10,7 +10,7 @@ import { ColorContext, useData } from '../../Context'
 import * as Styled from './Signin.styled'
 
 const Register = () => {
-  const { user, createUser, signInWithGoogle } = useData()
+  const { isLoggedIn, logOut, signInWithGoogle, user, createUser } = useData()
 
   const schema = yup.object().shape({
     Name: yup.string().required(),
@@ -38,7 +38,7 @@ const Register = () => {
     <Styled.StyledRegister>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="text" placeholder="Your Name" {...register('Name')} />
-        <input type="email" placeholder="Your Email" {...register('Email')} />
+        <input type="email" placeholder="Your Email" {...register('Email')}  />
         <input
           type="password"
           placeholder="Your Password"
