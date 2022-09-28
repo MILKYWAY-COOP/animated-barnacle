@@ -6,6 +6,7 @@ export const StyledMain = styled.main`
   align-items: center;
   background: ${({ theme }) => theme.secondaryColor};
   width: auto;
+  transition: all 0.5s ease;
 
   .container {
     display: flex;
@@ -63,8 +64,9 @@ export const StyledRegister = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     width: 300px;
+    transition: all 0.5s ease;
 
     input {
       width: 100%;
@@ -93,6 +95,14 @@ export const StyledRegister = styled.div`
       &:hover {
         background: ${({ theme }) => theme.mainColor};
       }
+    }
+
+    p {
+      margin-bottom: 0.2em;
+      text-align: left;
+      font-family: 'Reem Kufi Ink', sans-serif;
+      transition: all 0.5s ease;
+      color: red;
     }
   }
 `
