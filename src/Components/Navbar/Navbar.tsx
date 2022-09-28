@@ -15,10 +15,14 @@ const Navbar = () => {
     navigate('/register')
   }
 
+  const goHome = () => {
+    navigate('/')
+  }
+
   return (
     <>
       <StyledNavbar theme={theme}>
-        <div className="logo">
+        <div className="logo" onClick={goHome}>
           <h1>TnC</h1>
         </div>
         <div className="search">
