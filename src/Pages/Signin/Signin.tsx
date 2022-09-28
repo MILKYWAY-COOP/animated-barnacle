@@ -18,7 +18,7 @@ const Register = () => {
     ConfirmPassword: yup
       .string()
       .oneOf([yup.ref('Password'), null], 'Passwords must match')
-      .required(),
+      .required('*Required'),
   })
 
   const {
