@@ -17,6 +17,7 @@ export const StyledNavbar = styled.nav`
     font-size: 1.5em;
     color: ${({ theme }) => theme.universal1};
     font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
   }
 
   .Landlord {
