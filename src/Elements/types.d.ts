@@ -28,4 +28,6 @@ export interface IUserContext {
   createUser: (email: string, password: string) => void
   logOut: () => void
   signInWithGoogle: () => void
+  signIn: (email: string, password: string) => void
+  errorMSG: string 
 }
