@@ -16,7 +16,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
 
 function App() {
   const { isLoggedIn } = useData()
-  return <Wrapper>{isLoggedIn ? <AuthRoutes /> : <ROUTES />}</Wrapper>
+  return <Wrapper>{isLoggedIn ? <ROUTES /> : <AuthRoutes />}</Wrapper>
 }
 
 export default App
