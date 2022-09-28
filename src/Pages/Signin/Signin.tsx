@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
@@ -10,12 +10,11 @@ import { ColorContext, useData } from '../../Context'
 import * as Styled from './Signin.styled'
 
 const Register = () => {
-  const { isLoggedIn, logOut, signInWithGoogle, user, createUser } = useData()
-
+  const { createUser } = useData()
   const schema = yup.object().shape({
-    Name: yup.string().required(),
-    Email: yup.string().email().required(),
-    Password: yup.string().required(),
+    Name: yup.string().required('*Required'),
+    Email: yup.string().email().required('*Required'),
+    Password: yup.string().required('*Required'),
     ConfirmPassword: yup
       .string()
       .oneOf([yup.ref('Password'), null], 'Passwords must match')
@@ -30,35 +29,45 @@ const Register = () => {
     resolver: yupResolver(schema),
   })
 
+  const nameMSG = errors.Name?.message
+  const emailMSG = errors.Email?.message
+  const passwordMSG = errors.Password?.message
+  const confirmPasswordMSG = errors.ConfirmPassword?.message
+
   const onSubmit = (data: any) => {
-    console.log(data)
+    createUser(data.Email, data.Password)
   }
 
   return (
     <Styled.StyledRegister>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="text" placeholder="Your Name" {...register('Name')} />
-        <input type="email" placeholder="Your Email" {...register('Email')}  />
+        {nameMSG && <p>{`${nameMSG}`}</p>}
+        <input type="email" placeholder="Your Email" {...register('Email')} />
+        {emailMSG && <p>{`${emailMSG}`}</p>}
         <input
           type="password"
           placeholder="Your Password"
           {...register('Password')}
         />
+        {passwordMSG && <p>{`${passwordMSG}`}</p>}
         <input
           type="password"
           placeholder="Confirm Your Password"
           {...register('ConfirmPassword')}
         />
-        <button type="submit" >Register</button>
+        {confirmPasswordMSG && <p>{`${confirmPasswordMSG}`}</p>}
+        <button type="submit">Register</button>
       </form>
     </Styled.StyledRegister>
   )
 }
 
 const Login = () => {
+  const { signIn, errorMSG } = useData()
   const schema = yup.object().shape({
-    Email: yup.string().email().required(),
-    Password: yup.string().required(),
+    Email: yup.string().email().required('*Required'),
+    Password: yup.string().required('*Required'),
   })
 
   const {
@@ -69,19 +78,25 @@ const Login = () => {
     resolver: yupResolver(schema),
   })
 
+  const emailMSG = errors.Email?.message
+  const passwordMSG = errors.Password?.message
+
   const onSubmit = (data: any) => {
-    console.log(data)
+    signIn(data.Email, data.Password)
   }
 
   return (
     <Styled.StyledRegister>
       <form onSubmit={handleSubmit(onSubmit)}>
+        {errorMSG && <p>{`${errorMSG}`}</p>}
         <input type="email" placeholder="Your Email" {...register('Email')} />
+        {emailMSG && <p>{`${emailMSG}`}</p>}
         <input
           type="password"
           placeholder="Your Password"
           {...register('Password')}
         />
+        {passwordMSG && <p>{`${passwordMSG}`}</p>}
         <button type="submit">Log In</button>
       </form>
     </Styled.StyledRegister>
@@ -89,6 +104,7 @@ const Login = () => {
 }
 
 const SignIn = () => {
+  const { signInWithGoogle, isLoggedIn, user } = useData()
   const path = useCurrentPath()
   const theme = useContext(ColorContext)
   const navigate = useNavigate()
@@ -103,6 +119,14 @@ const SignIn = () => {
 
   function handleRegister() {
     navigate('/register')
+  }
+
+  function handleGoogleLogin() {
+    signInWithGoogle()
+    if (isLoggedIn) {
+      navigate('/')
+      console.log(user)
+    }
   }
 
   return (
@@ -124,7 +148,9 @@ const SignIn = () => {
           </a>
         ) : null}
         <div className="button">
-          <button>{essentials.path} with Google</button>
+          <button onClick={handleGoogleLogin}>
+            {essentials.path} with Google
+          </button>
         </div>
         {essentials.path === 'Register' ? (
           <span>
