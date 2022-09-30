@@ -37,9 +37,6 @@ const Slider = (props: any) => {
     slideIcons[slideNumber]?.classList.add('active')
   })
 
-
-
-
   //image slider previous button
   prevBtn?.addEventListener('click', () => {
 
