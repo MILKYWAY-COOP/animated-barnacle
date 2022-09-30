@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
-export const styledCard = styled.div`
-
+export const StyledCard = styled.div`
+    display: flex;
+    flex-direction: row;
 `
