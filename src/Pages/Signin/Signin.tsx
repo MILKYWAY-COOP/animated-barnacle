@@ -154,12 +154,19 @@ const SignIn = () => {
         </div>
         {essentials.path === 'Register' ? (
           <span>
-            Already have an account?<a onClick={handleLogin}>Log in</a>
+            Already have an account?
+            <button className="login" onClick={handleLogin}>
+              Log in
+            </button>
           </span>
         ) : null}
         {essentials.path === 'Login' ? (
           <span>
-            Don't have an account?<a onClick={handleRegister}>{` Register`}</a>
+            Don't have an account?
+            <button
+              className="login"
+              onClick={handleRegister}
+            >{` Register`}</button>
           </span>
         ) : null}
       </div>
