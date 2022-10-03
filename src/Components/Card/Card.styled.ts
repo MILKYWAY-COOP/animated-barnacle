@@ -2,5 +2,9 @@ import styled from 'styled-components'
 
 export const StyledCard = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    .imgs {
+
+    }
 `
