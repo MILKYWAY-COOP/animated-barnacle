@@ -61,3 +61,7 @@ export interface ICard {
 export interface ICardProps {
   card: ICard
 }
+
+export interface ISlider {
+  img: string[]
+}
