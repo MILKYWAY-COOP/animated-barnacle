@@ -12,7 +12,7 @@ const Error = () => {
         </p>
       </div>
       <div className="right404">
-        <img src="images/404.jpg" alt='404 Image'/>
+        <img src="images/404.jpg" alt="404" />
       </div>
     </StyledError>
   )
