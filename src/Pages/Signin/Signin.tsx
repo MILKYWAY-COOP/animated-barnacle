@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
 import { useCurrentPath } from '../../Elements'
-import { ColorContext, useData } from '../../Context'
+import { ColorContext, useData } from '../../context'
 
 import * as Styled from './Signin.styled'
 
