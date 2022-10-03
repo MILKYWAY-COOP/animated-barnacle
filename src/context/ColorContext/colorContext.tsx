@@ -12,6 +12,7 @@ interface Props {
 export const ColorProvider = ({ children }: Props) => {
   const { lightTheme, darkTheme } = Colors
   const [theme, setTheme] = useState<IColors>(darkTheme)
+  setTheme(lightTheme ? lightTheme : darkTheme)
 
   return <ColorContext.Provider value={theme }>{children}</ColorContext.Provider>
 }
