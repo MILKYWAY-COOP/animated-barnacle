@@ -6,7 +6,8 @@ interface IImg {
 }
 
 const Slider = (props: any) => {
-  const { img } = props
+  const img = props
+  console.log(img)
   const nextBtn = document.querySelector('.next-btn')
   const prevBtn = document.querySelector('.prev-btn')
   const slides = document.querySelectorAll('.slide')
@@ -95,6 +96,8 @@ const Slider = (props: any) => {
   return (
     <SliderContainer>
       <div className="slider">
+        {/*Draw each img in {} in props*/}
+{/* 
         {Object.keys(img).map((key: string) => {
           const img: IImg = props.img
           return (
@@ -102,7 +105,18 @@ const Slider = (props: any) => {
               <img src={img[key]} alt={key} />
             </div>
           )
-        })}
+        })} */}
+
+        {/* Draw each pic in the img object */}
+        {Object.keys(img).map((key: string) => {
+          const img: IImg = props.img
+          return (
+            <div className="slide">
+              <img src={img[key]} alt={key} />
+            </div>
+          )
+        }
+        )}
 
         <div className="navigation">
           <i className="prev-btn">
@@ -114,7 +128,6 @@ const Slider = (props: any) => {
         </div>
 
         <div className="n-visibility">
-          {/* for each image in img, draw <div className="slide-icon"></div>*/}
           {Object.keys(img).map((key: string) => {
             return <div className="slide-icon"></div>
           })}
