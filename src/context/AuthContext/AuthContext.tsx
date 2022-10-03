@@ -10,7 +10,7 @@ import {
 
 import { IUserContext } from '../../Elements/types'
 import { useNavigate } from 'react-router-dom'
-import { auth } from '../firebase'
+import * as firebase from '../Firebase/Firebase'
 
 const AuthContext = createContext<IUserContext>({} as IUserContext)
 export const useData = () => useContext(AuthContext)
@@ -27,7 +27,7 @@ export const AuthContextProvider = ({ children }: Props) => {
 
   const createUser = async (email: string, password: string) => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(firebase.auth, email, password)
       setIsLoggedIn(true)
       navigate('/')
     } catch (error) {
@@ -38,7 +38,7 @@ export const AuthContextProvider = ({ children }: Props) => {
   const signInWithGoogle = async (): Promise<void> => {
     const provider = new GoogleAuthProvider()
     try {
-      await signInWithPopup(auth, provider)
+      await signInWithPopup(firebase.auth, provider)
       setIsLoggedIn(true)
       navigate('/')
     } catch (error) {
@@ -48,7 +48,7 @@ export const AuthContextProvider = ({ children }: Props) => {
 
   const signIn = async (email: string, password: string) => {
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      await signInWithEmailAndPassword(firebase.auth, email, password)
       setIsLoggedIn(true)
       navigate('/')
     } catch (error) {
@@ -58,14 +58,14 @@ export const AuthContextProvider = ({ children }: Props) => {
 
   const logOut = async (): Promise<void> => {
     try {
-      await signOut(auth)
+      await signOut(firebase.auth)
     } catch (error) {
       console.log(error)
     }
   }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, user => {
+    const unsubscribe = onAuthStateChanged(firebase.auth, user => {
       if (user) {
         setUser(user)
         //setIsLoggedIn(true)
