@@ -57,6 +57,17 @@ export const StyledMain = styled.main`
     span {
       margin-top: 0.5em;
     }
+
+    .login {
+      font-family: ${({ theme }) => theme.fontFamily};
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+      font-size: 16px;
+    }
   }
 `
 
