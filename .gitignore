@@ -24,3 +24,5 @@ yarn-error.log*
 
 #firebase
 /src/Context/Firebase/index.ts
+
+git config core.ignorecase false
