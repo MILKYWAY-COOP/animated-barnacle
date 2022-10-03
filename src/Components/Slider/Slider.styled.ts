@@ -6,6 +6,9 @@ export const SliderContainer = styled.div`
   position: relative;
   background-color: chartreuse;
   border-radius: 5px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
 
   .img {
     height: 300px;
@@ -30,7 +33,7 @@ export const SliderContainer = styled.div`
     z-index: 1;
     padding: 0 5px;
     opacity: 0;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       opacity: 1;
@@ -80,9 +83,9 @@ export const SliderContainer = styled.div`
       cursor: pointer;
       transition: all 0.3s ease-in-out;
     }
-    
+
     .active {
-        background: #fff;
+      background: #fff;
       transform: scale(2);
     }
   }
