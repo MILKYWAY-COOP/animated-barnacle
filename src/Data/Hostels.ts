@@ -1,4 +1,4 @@
-export default [
+const data =  [
   {
     hostelId: 1,
     title: 'Umoja Hostels',
@@ -205,3 +205,6 @@ export default [
     noOfPeople: '',
   },
 ]
+
+
+export default data
