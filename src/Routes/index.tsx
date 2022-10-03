@@ -16,7 +16,7 @@ export const Paths = {
 export const ROUTES = () => (
   <Routes>
     <Route path={Paths.home} element={<Pages.Home />} />
-    <Route path={Paths.notFound} element={<Pages.notFound />} />
+    <Route path={Paths.notFound} element={<Pages.NotFound />} />
   </Routes>
 )
 
