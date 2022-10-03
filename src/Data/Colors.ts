@@ -27,6 +27,7 @@ export interface IColors {
   secondaryColor: string
   fontColor: string
   secondaryFontColor: string
+  
 }
 
 // create interface for theme
