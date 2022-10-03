@@ -1,4 +1,4 @@
-import { ColorContext } from '../../Context/ColorContext/colorContext'
+import { ColorContext } from '../../context/ColorContext/colorContext'
 import { StyledSearch } from './Search.styled'
 import { FaSearch } from 'react-icons/fa'
 import { useContext } from 'react'
