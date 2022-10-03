@@ -26,5 +26,6 @@ export const AuthRoutes = () => (
     <Route path={Paths.login} element={<Pages.SignIn />} />
     <Route path={Paths.register} element={<Pages.SignIn />} />
     <Route path={Paths.forgotPassword} element={<Pages.SignIn />} />
+    <Route path={Paths.notFound} element={<Pages.NotFound />} />
   </Routes>
 )
