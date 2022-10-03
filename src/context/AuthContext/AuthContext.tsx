@@ -7,9 +7,10 @@ import {
   signInWithPopup,
   onAuthStateChanged,
 } from 'firebase/auth'
-import { auth } from '../Firebase'
+
 import { IUserContext } from '../../Elements/types'
 import { useNavigate } from 'react-router-dom'
+import { auth } from '../Firebase'
 
 const AuthContext = createContext<IUserContext>({} as IUserContext)
 export const useData = () => useContext(AuthContext)
