@@ -2,13 +2,10 @@ import styled from 'styled-components'
 
 export const SliderContainer = styled.div`
   height: 300px;
-  aspect-ratio: 1.5/2;
+  width: 100%;
   position: relative;
   background-color: chartreuse;
   border-radius: 5px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  white-space: nowrap;
 
   .img {
     height: 300px;
