@@ -4,7 +4,12 @@ export const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  
+  transition: all 0.3s;
+
+  @media (max-width: 500px) {
+    width: calc(100vh - 3em);
+  }
+
   .info {
     display: block;
 
