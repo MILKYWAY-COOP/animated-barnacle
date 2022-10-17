@@ -12,7 +12,7 @@ export const Paths = {
 
   notFound: '*',
 
-  hostelDetails: '/home/:hostelId',
+  hostelDetails: '/hostel/:hostelId',
 }
 
 export const ROUTES = () => (
