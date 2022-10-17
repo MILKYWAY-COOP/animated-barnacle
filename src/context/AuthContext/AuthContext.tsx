@@ -10,7 +10,7 @@ import {
 
 import { IUserContext } from '../../Elements/types'
 import { useNavigate } from 'react-router-dom'
-import { auth } from '../Firebase'
+import { auth } from '../index'
 
 const AuthContext = createContext<IUserContext>({} as IUserContext)
 export const useData = () => useContext(AuthContext)
