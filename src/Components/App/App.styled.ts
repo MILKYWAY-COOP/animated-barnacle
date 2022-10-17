@@ -4,11 +4,12 @@ const StyledApp = styled.div`
   width: 100vw;
   height: fit-content;
   background: ${({ theme }) => theme.secondaryColor};
-  padding: 1em;
+  height: fit-content;
 
-  @media (max-width: 768px) {
-    height: fit-content;
-
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 `
 
