@@ -11,6 +11,8 @@ export const Paths = {
   forgotPassword: '/forgot-password',
 
   notFound: '*',
+
+  hostelDetails: '/home/:hostelId',
 }
 
 export const ROUTES = () => (
@@ -27,5 +29,6 @@ export const AuthRoutes = () => (
     <Route path={Paths.register} element={<Pages.SignIn />} />
     <Route path={Paths.forgotPassword} element={<Pages.SignIn />} />
     <Route path={Paths.notFound} element={<Pages.NotFound />} />
+    <Route path={Paths.hostelDetails} element={<Pages.HostelDetails />} />
   </Routes>
 )
