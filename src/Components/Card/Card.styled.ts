@@ -7,7 +7,33 @@ export const StyledCard = styled.div`
   transition: all 0.3s;
 
   @media (max-width: 500px) {
-    width: calc(100vh - 3em);
+    min-width: calc(100vw - 10em);
+  }
+  @media (max-width: 600px) {
+    min-width: calc(100vw - 10em);
+  }
+  @media (max-width: 700px) {
+    min-width: calc(100vw - 10em);
+  }
+
+  @media (max-width: 800px) {
+    min-width: calc(100vw - 18em);
+  }
+
+  @media (max-width: 900px) {
+    min-width: calc(100vw - 15em);
+  }
+
+  @media (max-width: 1000px) {
+    min-width: calc(100vw - 60em);
+  }
+
+  @media (min-width: 1000px) {
+    min-width: calc(100vw - 66em);
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   .info {
