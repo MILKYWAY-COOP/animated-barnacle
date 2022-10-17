@@ -1,7 +1,8 @@
+import { ReactNode, useContext } from 'react'
 import { Navbar, StyledApp } from './Components'
 import { AuthRoutes, ROUTES } from './Routes'
-import { ReactNode, useContext } from 'react'
-import { ColorContext, useData } from './context'
+
+import { ColorContext, useData } from './Context'
 
 const Wrapper = ({ children }: { children: ReactNode }) => {
   const theme = useContext(ColorContext)
