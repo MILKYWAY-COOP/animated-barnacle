@@ -2,7 +2,7 @@ import { useCurrentPath } from '../../Elements'
 import { StyledNavbar } from './Navbar.styled'
 import { StyledMobile } from './Mobile.styled'
 import { useNavigate } from 'react-router-dom'
-import { ColorContext } from '../../context'
+import { ColorContext } from '../../Context'
 import Search from '../Search/Search'
 import { useContext } from 'react'
 
