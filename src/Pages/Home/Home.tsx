@@ -1,6 +1,6 @@
 import { Card } from '../../Components'
 import Hostels from '../../Data/Hostels'
-import { ColorContext } from '../../context'
+import { ColorContext } from '../../Context'
 import { useContext } from 'react'
 import { StyledHome } from './Home.styled'
 
