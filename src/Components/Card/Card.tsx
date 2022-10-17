@@ -25,14 +25,20 @@ export const Card = (props: any) => {
           </div>
 
           <div className="rightDiv">
-            <span>{`[${hostel.rating}]`}<GrStar/></span>
+            <span>
+              {`[${hostel.rating}]`}
+              <GrStar />
+            </span>
           </div>
         </div>
 
         <div className="lower">
           <p>
-            Starting from Shs, <br/><span>5000</span>
+            Starting from Shs, <span>5000</span>
           </p>
+          <Link to={`/hostel/${hostel.hostelId}`} className="link">
+            More
+          </Link>
         </div>
       </div>
     </StyledCard>
