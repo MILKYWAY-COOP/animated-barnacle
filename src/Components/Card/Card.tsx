@@ -1,7 +1,8 @@
 import { ICardProps } from '../../Elements/types'
 import Slider from '../Slider/Slider'
 import { StyledCard } from './Card.styled'
-import {GrStar} from 'react-icons/gr'
+import { GrStar } from 'react-icons/gr'
+import { Link } from 'react-router-dom'
 
 export interface ICard {
   hostel: ICardProps
@@ -30,7 +31,7 @@ export const Card = (props: any) => {
 
         <div className="lower">
           <p>
-            Starting from Shs,<span>5000</span>
+            Starting from Shs, <br/><span>5000</span>
           </p>
         </div>
       </div>
