@@ -5,35 +5,11 @@ export const StyledCard = styled.div`
   flex-direction: column;
   min-width: 250px;
   transition: all 0.3s;
-
-  @media (max-width: 500px) {
-    min-width: calc(100vw - 10em);
-  }
-  @media (max-width: 600px) {
-    min-width: calc(100vw - 10em);
-  }
-  @media (max-width: 700px) {
-    min-width: calc(100vw - 10em);
-  }
-
-  @media (max-width: 800px) {
-    min-width: calc(100vw - 18em);
-  }
-
-  @media (max-width: 900px) {
-    min-width: calc(100vw - 15em);
-  }
-
-  @media (max-width: 1000px) {
-    min-width: calc(100vw - 60em);
-  }
-
-  @media (min-width: 1000px) {
-    min-width: calc(100vw - 66em);
-  }
+  flex: 1;
 
   &:hover {
     cursor: pointer;
+    scale: 1.05;
   }
 
   .info {
@@ -72,9 +48,11 @@ export const StyledCard = styled.div`
     }
 
     .lower {
+      display: flex;
+      justify-content: space-between;
       padding-top: 0.5em;
 
-      p {
+      .link, p {
         font-size: 1.2em;
         color: ${({ theme }) => theme.secondaryFontColor};
         font-family: ${({ theme }) => theme.fontFamily};
