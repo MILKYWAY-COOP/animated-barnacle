@@ -41,22 +41,22 @@ const Register = () => {
   return (
     <Styled.StyledRegister>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="Your Name" {...register('Name')} />
         {nameMSG && <p>{`${nameMSG}`}</p>}
-        <input type="email" placeholder="Your Email" {...register('Email')} />
+        <input type="text" placeholder="Your Name" {...register('Name')} />
         {emailMSG && <p>{`${emailMSG}`}</p>}
+        <input type="email" placeholder="Your Email" {...register('Email')} />
+        {passwordMSG && <p>{`${passwordMSG}`}</p>}
         <input
           type="password"
           placeholder="Your Password"
           {...register('Password')}
         />
-        {passwordMSG && <p>{`${passwordMSG}`}</p>}
+        {confirmPasswordMSG && <p>{`${confirmPasswordMSG}`}</p>}
         <input
           type="password"
           placeholder="Confirm Your Password"
           {...register('ConfirmPassword')}
         />
-        {confirmPasswordMSG && <p>{`${confirmPasswordMSG}`}</p>}
         <button type="submit">Register</button>
       </form>
     </Styled.StyledRegister>
