@@ -26,17 +26,17 @@ const Navbar = () => {
           <h1>TnC</h1>
         </div>
         <div className="search">
-          {path === '/register' || path === '/login' ? null : <Search />}
+          {path === '/' ? <Search /> : null}
         </div>
         <div className="Landlord">
           <h1 onClick={handleClick}>Become a Landlord</h1>
         </div>
       </StyledNavbar>
-      {path === '/register' || path === '/login' ? null : (
+      {path === '/' ? (
         <StyledMobile theme={theme}>
           <Search />
-        </StyledMobile>
-      )}
+        </StyledMobile>)
+      : null}
     </>
   )
 }
