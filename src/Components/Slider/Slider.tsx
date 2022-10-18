@@ -1,7 +1,10 @@
+import { useState } from 'react'
+
 import { SliderContainer } from './Slider.styled'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 import { ISlider } from '../../Elements/types'
-import { useState } from 'react'
+
+
 
 const Slider = (props: ISlider) => {
   const [currentIndex, setCurrentIndex] = useState(0)
