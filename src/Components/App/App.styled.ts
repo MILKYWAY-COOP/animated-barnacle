@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 const StyledApp = styled.div`
   width: 100vw;
-  height: fit-content;
+  height: auto !important;
   background: ${({ theme }) => theme.secondaryColor};
-  height: fit-content;
 
   * {
     margin: 0;
