@@ -5,6 +5,7 @@ export const StyledError = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 20px;	
 
   * {
     flex: 1;
@@ -18,15 +19,18 @@ export const StyledError = styled.div`
 
     h1 {
       font-size: 4em;
+      text-align: center;
     }
 
     h2 {
       font-size: 2em;
       text-shadow: 0 0 10px #fffdd0;
+      text-align: center;
     }
 
     p {
       font-size: 1.5em;
+      text-align: center;
     }
   }
 
