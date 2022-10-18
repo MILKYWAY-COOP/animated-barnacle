@@ -13,34 +13,34 @@ export const Card = (props: any) => {
 
   return (
     <StyledCard theme={theme}>
-      <div className="imgs">
-        <Slider img={hostel.img} />
-      </div>
-
-      <div className="info">
-        <div className="upper">
-          <div className="leftDiv">
-            <h3>{hostel.title},</h3>
-            <h3>{hostel.location}</h3>
-          </div>
-
-          <div className="rightDiv">
-            <span>
-              {`[${hostel.rating}]`}
-              <GrStar />
-            </span>
-          </div>
+        <div className="imgs">
+          <Slider img={hostel.img} />
         </div>
 
-        <div className="lower">
-          <p>
-            Starting from Shs, <span>5000</span>
-          </p>
-          <Link to={`/hostel/${hostel.hostelId}`} className="link">
-            More
-          </Link>
+        <div className="info">
+          <div className="upper">
+            <div className="leftDiv">
+              <h3>{hostel.title},</h3>
+              <h3>{hostel.location}</h3>
+            </div>
+
+            <div className="rightDiv">
+              <span>
+                {`[${hostel.rating}]`}
+                <GrStar />
+              </span>
+            </div>
+          </div>
+
+          <div className="lower">
+            <p>
+              Starting from Shs, <span>5000</span>
+            </p>
+            <Link to={`/hostel/${hostel.hostelId}`} className="link">
+              More
+            </Link>
+          </div>
         </div>
-      </div>
     </StyledCard>
   )
 }
