@@ -1,15 +1,16 @@
-import { useContext } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
 import { useCurrentPath } from '../../Elements'
-import { ColorContext, useData } from '../../Context'
+import { useColor, useData } from '../../Context'
 
 import * as Styled from './Signin.styled'
 
 const Register = () => {
+  const { theme } = useColor()
+  console.log(theme)
   const { createUser } = useData()
   const schema = yup.object().shape({
     Name: yup.string().required('*Required'),
@@ -39,7 +40,7 @@ const Register = () => {
   }
 
   return (
-    <Styled.StyledRegister>
+    <Styled.StyledRegister theme={theme}>
       <form onSubmit={handleSubmit(onSubmit)}>
         {nameMSG && <p>{`${nameMSG}`}</p>}
         <input type="text" placeholder="Your Name" {...register('Name')} />
@@ -64,6 +65,7 @@ const Register = () => {
 }
 
 const Login = () => {
+  const { theme } = useColor()
   const { signIn, errorMSG } = useData()
   const schema = yup.object().shape({
     Email: yup.string().email().required('*Required'),
@@ -86,7 +88,7 @@ const Login = () => {
   }
 
   return (
-    <Styled.StyledRegister>
+    <Styled.StyledRegister theme={theme}>
       <form onSubmit={handleSubmit(onSubmit)}>
         {errorMSG && <p>{`${errorMSG}`}</p>}
         <input type="email" placeholder="Your Email" {...register('Email')} />
@@ -106,7 +108,7 @@ const Login = () => {
 const SignIn = () => {
   const { signInWithGoogle, isLoggedIn, user } = useData()
   const path = useCurrentPath()
-  const theme = useContext(ColorContext)
+  const { theme } = useColor()
   const navigate = useNavigate()
 
   const essentials = {
