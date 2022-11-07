@@ -1,6 +1,15 @@
 export interface ITheme {
-  isLogged: boolean
-  setLogged: (Logged: boolean) => void
+  theme: {}
+  toggleTheme: () => void
+}
+export interface IUserContext {
+  user: {}
+  isLoggedIn: boolean
+  createUser: (email: string, password: string) => void
+  logOut: () => void
+  signInWithGoogle: () => void
+  signIn: (email: string, password: string) => void
+  errorMSG: string
 }
 
 export const Colors = {
@@ -17,20 +26,7 @@ export interface IColors {
 }
 
 // create interface for theme
-export interface ITheme {
-  IColors
-  setTheme: () => void
-}
 
-export interface IUserContext {
-  user: {}
-  isLoggedIn: boolean
-  createUser: (email: string, password: string) => void
-  logOut: () => void
-  signInWithGoogle: () => void
-  signIn: (email: string, password: string) => void
-  errorMSG: string 
-}
 
 export interface ICard {
   title: string
