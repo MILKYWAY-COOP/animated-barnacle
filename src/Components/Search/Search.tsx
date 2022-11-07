@@ -1,10 +1,9 @@
-import { ColorContext } from '../../Context/ColorContext/colorContext'
+import { useColor } from '../../Context'
 import { StyledSearch } from './Search.styled'
 import { FaSearch } from 'react-icons/fa'
-import { useContext } from 'react'
 
 const Search = () => {
-  const theme = useContext(ColorContext)
+  const theme = useColor()
   return (
     <StyledSearch theme={theme}>
       <select>
