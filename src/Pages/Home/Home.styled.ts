@@ -10,4 +10,5 @@ export const StyledHome = styled.div`
   align-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  background-color: ${({ theme }) => theme.secondaryColor};
 `
