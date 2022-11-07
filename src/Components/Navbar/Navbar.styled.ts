@@ -9,9 +9,9 @@ export const StyledNavbar = styled.nav`
   align-items: center;
   height: 5em;
   padding: 0 1em;
-  background: ${({ theme }) => theme.mainColor};
+  background: ${({ theme }) =>
+    theme.mainColor}; // <--- This is the line that's causing the error
   transition: all 0.5s ease-in-out;
-  
 
   .logo {
     font-size: 1.5em;
