@@ -5,8 +5,8 @@ export const StyledHostel = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: fit-content;
   gap: 10px;
+  background-color: ${({ theme }) => theme.secondaryColor};
 
   .top {
     width: 100%;
@@ -29,11 +29,11 @@ export const StyledHostel = styled.div`
     display: grid;
     grid-template-columns: 50% 30%;
     justify-content: center;
-    gap: .5em;
+    gap: 0.5em;
 
     .left {
       width: 100%;
-      height: calc(400px + .5em);
+      height: calc(400px + 0.5em);
 
       img {
         width: 100%;
@@ -46,7 +46,7 @@ export const StyledHostel = styled.div`
       height: 400px;
       display: grid;
       grid-template-rows: 50% 50%;
-      gap: .5em;
+      gap: 0.5em;
 
       img {
         width: 100%;
@@ -65,5 +65,4 @@ export const StyledHostel = styled.div`
     width: 100%;
     height: fit-content;
   }
-
 `
