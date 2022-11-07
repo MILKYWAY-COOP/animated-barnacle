@@ -1,15 +1,15 @@
 import Hostels from '../../Data/Hostels'
 import { useParams } from 'react-router-dom'
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState } from 'react'
 import { ICard } from '../../Elements/types'
-import { ColorContext } from '../../Context'
+import { useColor } from '../../Context'
 import { StyledHostel } from './HostelDetails.styled'
 
 export const HostelDetails = () => {
   const [hostel, setHostel] = useState<ICard>()
   const [img, setImg] = useState<string[]>([])
   const { hostelId } = useParams()
-  const theme = useContext(ColorContext)
+  const { theme } = useColor()
 
   const id = Number(hostelId)
 
