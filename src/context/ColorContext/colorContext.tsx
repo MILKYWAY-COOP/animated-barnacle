@@ -1,8 +1,8 @@
-import { useState, createContext } from 'react'
-import { Colors, IColors } from '../../Data/Colors'
+import { useState, createContext, useContext } from 'react'
 import { ITheme } from '../../Elements/types'
 
-export const ColorContext = createContext<IColors | ITheme | null>(Colors.darkTheme)
+const ColorContext = createContext<ITheme>({} as ITheme)
+export const useColor = () => useContext(ColorContext)
 
 // create an interface for the children
 interface Props {
@@ -10,11 +10,36 @@ interface Props {
 }
 
 export const ColorProvider = ({ children }: Props) => {
-  const { lightTheme, darkTheme } = Colors
-  const [theme, setTheme] = useState<IColors>(darkTheme)
-  setTheme(lightTheme ? lightTheme : darkTheme)
+  
+  const darkTheme = {
+    mainColor: '#040348',
+    secondaryColor: '#082567',
+    fontColor: '#FFFFFF',
+    secondaryFontColor: '#FFFDD0',
+    universal1: '#FFFDD0',
+    fontFamily: `'Reem Kufi Ink', sans-serif`,
+  }
+  
+  const lightTheme = {
+    mainColor: '#ADD8E6',
+    secondaryColor: '#8AC7DB',
+    fontColor: '#000000',
+    secondaryFontColor: '#282829',
+    fontFamily: `'Reem Kufi Ink', sans-serif`,
+    universal1: '#FFFDD0',
+  }
+  
+  const [theme, setTheme] = useState<object>(darkTheme)
 
-  return <ColorContext.Provider value={theme }>{children}</ColorContext.Provider>
+  const toggleTheme = () => {
+    theme === lightTheme ? setTheme(darkTheme) : setTheme(lightTheme)
+  }
+
+  return (
+    <ColorContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ColorContext.Provider>
+  )
 }
 
 export default ColorProvider
