@@ -4,10 +4,10 @@ export const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${({ theme }) => theme.secondaryColor};
   width: auto;
   transition: all 0.5s ease;
-
+  background: ${({ theme }) => theme.secondaryColor};
+  
   .container {
     display: flex;
     flex-direction: column;
